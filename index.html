@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Courier Dashboard</h1>
+
+        <!-- Total Pending Orders -->
+        <div class="summary">
+            <h2>Total Pending Orders: <span id="total-pending">10</span></h2>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-pending" class="search-input" placeholder="Search by customer name..." onkeyup="filterPendingOrders()">
+        </div>
+
+        <button class="refresh-button" onclick="refreshPendingOrders()">Refresh Orders</button>
+
+        <h2>Assigned Orders</h2>
+        <table id="pending-orders-table">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Address</th>
+                    <th>Current Status</th>
+                    <th>Update Status</th>
+                </tr>
+            </thead>
+            <tbody id="pending-orders-body">
+                <tr>
+                    <td>Aarav Sharma</td>
+                    <td>123 MG Road, Bangalore, India</td>
+                    <td>In Transit</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up">Picked Up</option>
+                            <option value="in_transit" selected>In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Diya Patel</td>
+                    <td>456 Brigade Rd, Bangalore, India</td>
+                    <td>Picked Up</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up" selected>Picked Up</option>
+                            <option value="in_transit">In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ravi Kumar</td>
+                    <td>789 MG Road, Mumbai, India</td>
+                    <td>In Transit</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up">Picked Up</option>
+                            <option value="in_transit" selected>In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Priya Mehta</td>
+                    <td>1010 Park St, Delhi, India</td>
+                    <td>Picked Up</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up" selected>Picked Up</option>
+                            <option value="in_transit">In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Radhika Verma</td>
+                    <td>2020 High St, Kolkata, India</td>
+                    <td>In Transit</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up">Picked Up</option>
+                            <option value="in_transit" selected>In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Manish Gupta</td>
+                    <td>3030 South Rd, Pune, India</td>
+                    <td>Picked Up</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up" selected>Picked Up</option>
+                            <option value="in_transit">In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ananya Singh</td>
+                    <td>4040 East Ave, Chennai, India</td>
+                    <td>In Transit</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up">Picked Up</option>
+                            <option value="in_transit" selected>In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Shivam Yadav</td>
+                    <td>5050 West St, Hyderabad, India</td>
+                    <td>Picked Up</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up" selected>Picked Up</option>
+                            <option value="in_transit">In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Neha Sharma</td>
+                    <td>6060 North Road, Jaipur, India</td>
+                    <td>In Transit</td>
+                    <td>
+                        <select class="status-dropdown">
+                            <option value="picked_up">Picked Up</option>
+                            <option value="in_transit" selected>In Transit</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="failed_delivery">Failed Delivery</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
